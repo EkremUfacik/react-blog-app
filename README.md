@@ -14,5 +14,5 @@ https://ekremu.pythonanywhere.com/swagger/
 https://react-blog-app-eu.vercel.app/
 
 ## Screenshot
-<img src="assets/blog-app.png" alt="image" style="zoom: 200%;" />
+<img src="src/assets/blog-app.png" alt="image" style="zoom: 200%;" />
 
