@@ -14,11 +14,12 @@ import useAuthCalls from "../hooks/useAuthCalls";
 import { useAuthContext } from "../contexts/AuthProvider";
 import defaultAvatar from "../assets/blank-profile-picture-973460_1280.png";
 import { useState } from "react";
+import { MaterialUISwitch } from "./Switch";
 
 function NavBar() {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
-  const { currentUser } = useAuthContext();
+  const { currentUser, setIsDark } = useAuthContext();
 
   const { logout } = useAuthCalls();
 
@@ -79,6 +80,10 @@ function NavBar() {
             </Typography>
 
             <Box>
+              <MaterialUISwitch
+                sx={{ mr: "1rem" }}
+                onClick={() => setIsDark((prev) => !prev)}
+              />
               <Tooltip title="Open settings">
                 {currentUser?.avatar ? (
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

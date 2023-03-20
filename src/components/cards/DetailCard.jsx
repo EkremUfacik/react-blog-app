@@ -54,7 +54,9 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
   };
 
   return (
-    <Card sx={{ width: "70%", my: "3rem", maxWidth: "40rem" }}>
+    <Card
+      sx={{ width: "70%", my: "3rem", maxWidth: "40rem", minWidth: "25rem" }}
+    >
       <CardMedia
         component="img"
         image={blogDetailInfo?.image}
@@ -130,7 +132,6 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
       </CardActions>
       <Box
         sx={{
-          backgroundColor: "#F2F2F2",
           margin: ".5rem",
           padding: ".5rem",
           borderRadius: "5px",
@@ -146,7 +147,7 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
               display: "flex",
               alignItems: "center",
               borderRadius: "5px",
-              backgroundColor: "#ffffffa4",
+              backgroundColor: blueGrey[100],
             }}
           >
             <Box>
@@ -195,7 +196,7 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
           component="form"
           onSubmit={handleSubmit}
           sx={{
-            background: "#dcdbdb",
+            background: blueGrey[200],
             margin: ".5rem",
             padding: ".5rem",
             display: "flex",
@@ -227,7 +228,7 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
             label="Share Your Thoughts"
             value={comment || ""}
             onChange={(e) => setComment(e.target.value)}
-            sx={{ flex: "1", backgroundColor: "rgba(178, 178, 178, 0.497)" }}
+            sx={{ flex: "1", backgroundColor: blueGrey[100] }}
           />
           <Button type="submit" variant="contained">
             <SendIcon />

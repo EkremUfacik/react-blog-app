@@ -30,7 +30,7 @@ const Profile = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}>
         <Box
           sx={{
             display: "flex",
@@ -94,6 +94,7 @@ const Profile = () => {
             ))
           )}
           <Button
+            color="secondary"
             sx={{ mt: "2rem" }}
             variant="contained"
             endIcon={<BookIcon />}

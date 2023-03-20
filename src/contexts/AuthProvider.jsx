@@ -6,10 +6,13 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("USER")) || ""
   );
+  const [isDark, setIsDark] = useState(false);
 
   const values = {
     currentUser,
     setCurrentUser,
+    isDark,
+    setIsDark,
   };
 
   return (

@@ -59,11 +59,8 @@ const ProfileModal = ({ open, setOpen, updatedUser, setUpdatedUser }) => {
           fullWidth
           sx={{ mb: 2 }}
         />
-        <Button variant="contained" onClick={handleUpdate} sx={{ mr: 2 }}>
-          Kaydet
-        </Button>
-        <Button variant="contained" onClick={() => setOpen(false)}>
-          İptal
+        <Button variant="contained" onClick={handleUpdate}>
+          Update
         </Button>
       </Box>
     </Modal>
