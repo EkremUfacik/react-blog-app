@@ -13,3 +13,6 @@ https://ekremu.pythonanywhere.com/swagger/
 ### Final product :
 https://react-blog-app-eu.vercel.app/
 
+## Screenshot
+<img src="assets/blog-app.png" alt="image" style="zoom: 200%;" />
+
