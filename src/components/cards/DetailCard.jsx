@@ -158,7 +158,7 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
                 />
               ) : (
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  {item.user.display_name.slice(0, 1).toUpperCase()}
+                  {item?.user?.display_name?.slice(0, 1).toUpperCase()}
                 </Avatar>
               )}
             </Box>
@@ -214,7 +214,7 @@ function DetailCard({ blogDetailInfo, setBlogDetailInfo }) {
               />
             ) : (
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                {currentUser.username.slice(0, 1).toUpperCase()}
+                {currentUser?.username?.slice(0, 1).toUpperCase()}
               </Avatar>
             )}
           </Box>
