@@ -11,11 +11,13 @@ const Dashboard = () => {
   const [blogInfo, setBlogInfo] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    getBlogs(setBlogInfo);
-    // eslint-disable-next-line
-    console.log("renderrr");
-  }, []);
+  useEffect(
+    () => {
+      getBlogs(setBlogInfo);
+      // eslint-disable-next-line
+    }, // eslint-disable-next-line
+    []
+  );
 
   return (
     <Box>

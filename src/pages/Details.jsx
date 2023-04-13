@@ -11,11 +11,8 @@ const Details = () => {
 
   useEffect(() => {
     getBlogDetail(id, setBlogDetailInfo);
-    console.log("render detail");
     // eslint-disable-next-line
   }, []);
-  console.log("render detail open");
-  console.log(blogDetailInfo);
 
   return (
     <>
