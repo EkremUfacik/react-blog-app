@@ -11,7 +11,7 @@ https://ekremu.pythonanywhere.com/redoc/
 https://ekremu.pythonanywhere.com/swagger/
 
 ### Final product :
-https://react-blog-app-eu.vercel.app/
+https://blog-app-eu.netlify.app/
 
 ## Screenshot
 <img src="src/assets/blog-app.png" alt="image" style="zoom: 200%;" />
