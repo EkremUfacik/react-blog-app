@@ -8,11 +8,15 @@ const AuthProvider = ({ children }) => {
   );
   const [isDark, setIsDark] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   const values = {
     currentUser,
     setCurrentUser,
     isDark,
     setIsDark,
+    loading,
+    setLoading,
   };
 
   return (

@@ -4,10 +4,11 @@ import { toastError, toastSuccess } from "../helpers/toastify";
 
 const useBlogCalls = () => {
   const BASE_URL = "https://ekremu.pythonanywhere.com/";
-  const { currentUser } = useAuthContext();
+  const { currentUser, setLoading } = useAuthContext();
 
   const getBlogs = async (setState) => {
     try {
+      setLoading(true);
       if (currentUser) {
         const { data } = await axios.get(`${BASE_URL}api/blog/`, {
           headers: { Authorization: `Token ${currentUser?.key}` },
@@ -17,8 +18,10 @@ const useBlogCalls = () => {
         const { data } = await axios.get(`${BASE_URL}api/blog/`);
         setState(data);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -35,12 +38,15 @@ const useBlogCalls = () => {
 
   const getBlogDetail = async (id, setBlogDetailInfo) => {
     try {
+      setLoading(true);
       const { data } = await axios.get(`${BASE_URL}api/blog/${id}`, {
         headers: { Authorization: `Token ${currentUser?.key}` },
       });
       setBlogDetailInfo(data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 

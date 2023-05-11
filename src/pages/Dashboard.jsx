@@ -5,11 +5,14 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import dashboardStyle from "./styles/Dashboard.module.css";
 import useBlogCalls from "../hooks/useBlogCalls";
 import { useNavigate } from "react-router";
+import { useAuthContext } from "../contexts/AuthProvider";
+import loadingGif from "../assets/loading.gif";
 
 const Dashboard = () => {
   const { getBlogs } = useBlogCalls();
   const [blogInfo, setBlogInfo] = useState([]);
   const navigate = useNavigate();
+  const { loading } = useAuthContext();
 
   useEffect(
     () => {
@@ -21,13 +24,26 @@ const Dashboard = () => {
 
   return (
     <Box>
-      <Grid container spacing={2} p={3} justifyContent="center">
-        {blogInfo?.map((blog) => (
-          <Grid item key={blog.id}>
-            <BlogCard blog={blog} setBlogInfo={setBlogInfo} />
-          </Grid>
-        ))}
-      </Grid>
+      {loading ? (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <img src={loadingGif} alt="" />
+        </Box>
+      ) : (
+        <Grid container spacing={2} p={3} justifyContent="center">
+          {blogInfo?.map((blog) => (
+            <Grid item key={blog.id}>
+              <BlogCard blog={blog} setBlogInfo={setBlogInfo} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
       <Button
         className={dashboardStyle["new-blog-button"]}
         onClick={() => navigate("/newblog")}
