@@ -13,8 +13,8 @@ import { useNavigate } from "react-router";
 const Login = () => {
   const { login } = useAuthCalls();
   const [info, setInfo] = useState({
-    email: "",
-    password: "",
+    email: "aa@aa.com",
+    password: "Aa123456.",
   });
 
   const navigate = useNavigate();
